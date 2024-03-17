@@ -4,6 +4,7 @@ import ProductsPage from "@/pages/ProductsPage.vue";
 import ContactPage from "@/pages/ContactPage.vue";
 import CartPage from "@/pages/CartPage.vue";
 import ProductIdPage from "@/pages/ProductIdPage.vue";
+import NotFoundPage from "@/pages/NotFoundPage.vue";
 
 
 const routes = [
@@ -27,6 +28,14 @@ const routes = [
         path: '/products/:id',
         component: ProductIdPage,
     },
+    {
+        path: '/:pathMatch(.*)*',
+        redirect: '/products',
+    },
+    {
+        path: '/404',
+        component: NotFoundPage,
+    }
 ];
 
 const router = createRouter({

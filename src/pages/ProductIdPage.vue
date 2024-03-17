@@ -27,18 +27,18 @@ console.log(error.value);
     <div v-if="product">
       <div class="container flex flex-col gap-5 items-start ">
         <AppButton
-            class="text-green-500 py-3 px-2 text-xl w-auto max-md:text-center self-start"
+            class="text-green-500 py-3 px-2 text-xl w-1/4 max-md:text-center self-start"
             label="&larr; Back to products"
             @click="$router.push('/products')"
         />
-        <div class="flex bg-white max-md:flex-col rounded-2xl p-5 gap-5 shadow-2xl w-full items-center">
-          <div class="w-full flex flex-col max-md:items-center h-full sm:min-w-[150px] product-image-holder">
-            <img :alt="product.category" :src="product.image" class="object-contain w-full max-w-[150px]">
+        <div class="flex bg-white max-md:flex-col rounded-2xl p-5 gap-5 shadow-2xl w-full">
+          <div class=" flex flex-col max-w-[250px] w-full max-md:items-center h-full sm:min-w-[150px] product-image-holder">
+            <img :alt="product.category" :src="product.image" class="w-full object-contain">
           </div>
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-6 self-end">
             <h1 class="font-bold text-3xl">{{ product.title }}</h1>
             <p class="font-bold text-2xl text-amber-500">{{ product.price }}</p>
-            <p class="text-lg">{{ product.description }}</p>
+            <p class="text-2xl">{{ product.description }}</p>
             <AppButton class="text-green-500 w-full py-4 px-3" label="Add to cart"
                        @click="store.addProductToCart(product)"/>
           </div>
