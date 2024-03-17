@@ -17,10 +17,10 @@ const  store = useStore();
 <div v-for="product of props.products"
      :key="product.id"
     class="w-full bg-white rounded-2xl p-5 flex flex-col justify-between gap-6 shadow-2xl border border-gray-600 border-solid hover:cursor-pointer"
-     @click="$router.push(`/products/${product.id}`)"
+
 >
 
-  <div class="w-full flex items-center justify-center min-h-[250px]">
+  <div class="w-full flex items-center justify-center min-h-[250px]" @click="$router.push(`/products/${product.id}`)">
     <img :src="product.image" :alt="product.category" class="w-full max-w-[150px] block object-contain">
   </div>
   <hr>

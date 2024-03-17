@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/plugin-replace": "^5.0.5",
     "axios": "^1.6.7",
     "firebase": "^10.9.0",
     "pinia": "^2.1.7",
