@@ -61,7 +61,10 @@ export const useStore = defineStore("store", {
         },
         sendMessage() {
             toast.success("Your message was sent");
-        }
+        },
+        setCurrentProductPageId(productId) {
+            this.currentProductPageId = productId;
+        },
     },
     getters: {
         getProducts(state) {

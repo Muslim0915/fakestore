@@ -30,15 +30,12 @@ const routes = [
     },
     {
         path: '/:pathMatch(.*)*',
-        redirect: '/products',
-    },
-    {
-        path: '/404',
         component: NotFoundPage,
-    }
+    },
 ];
 
 const router = createRouter({
+    mode: 'history',
     routes,
     history: createWebHistory(),
     linkExactActiveClass: '!text-green-300 underline',
