@@ -1,6 +1,6 @@
 <script setup>
 import AppButton from "@/components/ui/AppButton.vue";
-import {useStore} from "@/store/index.js";
+import {useProductsStore} from "@/store/index.js";
 
 const props = defineProps({
   products: {
@@ -10,7 +10,7 @@ const props = defineProps({
   }
 });
 
-const  store = useStore();
+const productsStore = useProductsStore();
 </script>
 
 <template>
@@ -32,7 +32,7 @@ const  store = useStore();
   <AppButton
       label="Add to cart"
       class="text-green-500 w-full py-4 px-3"
-      @click="store.addProductToCart(product)"
+      @click="productsStore.addProductToCart(product)"
   />
   </div>
 </div>

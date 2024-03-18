@@ -1,25 +1,16 @@
 <script setup>
 import {useRoute} from "vue-router";
-import {useStore} from "@/store/index.js";
-import {ref} from "vue";
+import {useProductsStore} from "@/store/index.js";
+import {computed, ref} from "vue";
 import AppButton from "@/components/ui/AppButton.vue";
 
-
 const route = useRoute();
-
 const productId = route.params.id;
 
-const store = useStore();
-
+const productsStore = useProductsStore();
+const product = computed(() => productsStore.products.find(product => product.id === Number(productId)));
 
 const error = ref('');
-const product = store.getProducts?.find((product) => product.id.toString() === productId);
-
-if (!product) {
-  store.$reset();
-  error.value = 'Oops! Something went wrong. Please back to products page.';
-}
-console.log(error.value);
 </script>
 
 <template>
