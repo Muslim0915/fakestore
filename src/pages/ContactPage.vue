@@ -1,5 +1,5 @@
 <script setup>
-import { useStore } from "@/store/index.js";
+import { useProductsStore } from "@/store/index.js";
 import { ref } from 'vue';
 import {initializeApp} from "firebase/app";
 import { getDatabase, ref as dbRef, set, get } from 'firebase/database'
@@ -79,7 +79,7 @@ const handleSubmit = (e) => {
   })
 };
 
-const store = useStore();
+const productsStore = useProductsStore();
 
 const toast = useToast();
 

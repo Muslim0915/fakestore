@@ -1,6 +1,6 @@
 <script setup>
 import AppRoundedButton from "@/components/ui/AppRoundedButton.vue";
-import {useStore} from "@/store/index.js";
+import {useProductsStore} from "@/store/index.js";
 import {computed} from "vue";
 
 
@@ -15,7 +15,7 @@ const props = defineProps({
 
 
 
-const store = useStore();
+const productsStore = useProductsStore();
 </script>
 
 <template>
@@ -35,11 +35,11 @@ const store = useStore();
       </h3>
       <p class="text-gray-500 font-bold text-xl">$ {{ product.price }}</p>
       <div class="flex gap-8 items-center">
-        <AppRoundedButton @click="store.decreaseProduct(product)" class="p-2 bg-red-500 hover:bg-red-600 w-[40px] h-[40px]">
+        <AppRoundedButton @click="productsStore.decreaseProduct(product)" class="p-2 bg-red-500 hover:bg-red-600 w-[40px] h-[40px]">
           <i class="pi pi-minus text-white"></i>
         </AppRoundedButton>
         <div>{{product.quantity}}</div>
-        <AppRoundedButton @click="store.addProductToCart(product)" class="p-2 bg-green-500 hover:bg-green-600 w-[40px] h-[40px]">
+        <AppRoundedButton @click="productsStore.addProductToCart(product)" class="p-2 bg-green-500 hover:bg-green-600 w-[40px] h-[40px]">
           <i class="pi pi-plus"></i>
         </AppRoundedButton>
       </div>
@@ -48,7 +48,7 @@ const store = useStore();
 
         <AppRoundedButton
             class="p-2 bg-red-500 hover:bg-red-600 w-[28px] h-[28px]"
-            @click="store.removeProductFromCart(product.id)"
+            @click="productsStore.removeProductFromCart(product.id)"
         >
           <i class="pi pi-times"></i>
         </AppRoundedButton>
