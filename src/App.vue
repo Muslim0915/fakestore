@@ -1,6 +1,14 @@
 <script setup>
 import AppNavbar from "@/components/AppNavbar.vue";
 import AppFooter from "@/components/AppFooter.vue";
+import { useProductsStore } from "@/store/index.js";
+import { onMounted } from "vue";
+
+const productsStore = useProductsStore();
+onMounted(() => {
+  productsStore.fetchProducts(); // Вызываем fetchProducts для получения данных
+});
+
 </script>
 
 <template>

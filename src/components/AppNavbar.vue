@@ -1,9 +1,9 @@
 <script setup>
 
 import AppRoundedButton from "@/components/ui/AppRoundedButton.vue";
-import {useStore} from "../store/index.js";
+import {useProductsStore} from "@/store/index.js";
 
-const store = useStore();
+const productsStore = useProductsStore();
 </script>
 
 <template>
@@ -17,30 +17,30 @@ const store = useStore();
       </button>
       <button
           class="hidden z-50 max-md:flex items-end justify-center text-green-300 relative flex-col gap-1"
-          @click="store.toggleMenu()"
+          @click="productsStore.toggleMenu()"
       >
         <i class="pi pi-bars w-full h-full text-3xl"></i>
       </button>
       <div
           class="flex items-center transition-all header__nav justify-between max-lg:gap-5 gap-16 text-2xl flex-wrap max-md:flex-col max-md:w-full max-md:h-screen max-md:items-start max-md:bg-gray-900 max-md:p-5 max-md:justify-start max-md:absolute max-md:top-0"
-          :class="store.isMenuOpen ? 'max-md:left-0' : 'max-md:left-full'"
+          :class="productsStore.isMenuOpen ? 'max-md:left-0' : 'max-md:left-full'"
       >
-      <router-link exact @click="store.toggleMenu()" class="text-2xl text-white hover:text-green-300 transition-colors" to="/">
+      <router-link exact @click="productsStore.toggleMenu()" class="text-2xl text-white hover:text-green-300 transition-colors" to="/">
         Home
       </router-link>
-      <router-link @click="store.toggleMenu()" class="text-2xl text-white hover:text-green-300 transition-colors" to="/products">
+      <router-link @click="productsStore.toggleMenu()" class="text-2xl text-white hover:text-green-300 transition-colors" to="/products">
         Products
       </router-link>
-      <router-link @click="store.toggleMenu()" class="text-2xl text-white hover:text-green-300 transition-colors" to="/contact">
+      <router-link @click="productsStore.toggleMenu()" class="text-2xl text-white hover:text-green-300 transition-colors" to="/contact">
         Contact
       </router-link>
       <button
           class="text-2xl text-white hover:opacity-50 w-[50px] relative h-[50px] transition-all bg-green-400 rounded-full flex items-center justify-center"
-          @click="$router.push('/cart') && store.toggleMenu()"
+          @click="$router.push('/cart') && productsStore.toggleMenu()"
       >
         <i class="pi pi-shopping-cart text-2xl font-bold"></i>
         <AppRoundedButton class='absolute bg-amber-400 text-gray-900 bottom-[-25px] left-[-15px] w-10 h-10 text-center flex items-center justify-center p-2 rounded-[50%] font-bold'>
-          {{useStore().getCartTotalCount}}
+          {{productsStore.getCartTotalCount}}
         </AppRoundedButton>
       </button>
       </div>
