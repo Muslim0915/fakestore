@@ -7,8 +7,8 @@ import AppButton from "@/components/ui/AppButton.vue";
 const route = useRoute();
 const productId = route.params.id;
 
-const productsStore = useProductsStore();
-const product = computed(() => productsStore.products.find(product => product.id === Number(productId)));
+const store = useProductsStore();
+const product = computed(() => store.products.find(product => product.id === Number(productId)));
 
 const error = ref('');
 </script>
