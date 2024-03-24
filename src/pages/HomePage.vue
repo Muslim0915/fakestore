@@ -12,6 +12,7 @@ import AppButton from "@/components/ui/AppButton.vue";
         <AppButton
             class="text-white px-2 py-4 max-w-[220px]"
             label="Shop now"
+            @click="$router.push('/products')"
         />
       </div>
       <img src="@/assets/images/fashion.png" alt="fashion">

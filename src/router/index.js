@@ -5,6 +5,7 @@ import ContactPage from "@/pages/ContactPage.vue";
 import CartPage from "@/pages/CartPage.vue";
 import ProductIdPage from "@/pages/ProductIdPage.vue";
 import NotFoundPage from "@/pages/NotFoundPage.vue";
+import * as path from "path";
 
 
 const routes = [
@@ -32,6 +33,14 @@ const routes = [
         path: '/:pathMatch(.*)*',
         component: NotFoundPage,
     },
+    {
+        path: '/login',
+        component: () => import('@/pages/LoginPage.vue'),
+    },
+    {
+        path: '/signup',
+        component: () => import('@/pages/SignUpPage.vue'),
+    }
 ];
 
 const router = createRouter({
