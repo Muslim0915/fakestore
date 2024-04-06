@@ -10,5 +10,6 @@ const store = useProductsStore();
     class="grid grid-cols-3 max-lg:grid-cols-2 max-md:px-1 max-md:grid-cols-1 py-6 w-full max-w-[1280px] mx-auto gap-8"
   >
     <ProductItem :products="store.getFilteredProducts" />
+
   </div>
 </template>

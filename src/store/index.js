@@ -16,7 +16,6 @@ export const useProductsStore = defineStore("store", {
         isSuccess: false,
         isDisabled: true,
         isLoading: false,
-        isAuthenticated: false,
     }),
 
     actions: {
